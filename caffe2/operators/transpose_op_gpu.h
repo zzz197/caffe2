@@ -14,17 +14,21 @@
  * limitations under the License.
  */
 
+#ifndef CAFFE2_OPERATORS_TRANSPOSE_GPU_H_
+#define CAFFE2_OPERATORS_TRANSPOSE_GPU_H_
+
 #include "caffe2/core/context_gpu.h"
-#include "caffe2/operators/given_tensor_fill_op.h"
 
 namespace caffe2 {
 
-REGISTER_CUDA_OPERATOR(GivenTensorFill, GivenTensorFillOp<float, CUDAContext>);
-REGISTER_CUDA_OPERATOR(
-    GivenTensorDoubleFill,
-    GivenTensorFillOp<double, CUDAContext>);
-REGISTER_CUDA_OPERATOR(GivenTensorIntFill, GivenTensorFillOp<int, CUDAContext>);
-REGISTER_CUDA_OPERATOR(
-    GivenTensorBoolFill,
-    GivenTensorFillOp<bool, CUDAContext>);
+template <typename T>
+bool TransposeCUDA(
+    vector<int>& axes,
+    CUDAContext& context,
+    const Tensor<CUDAContext>& input,
+    Tensor<CUDAContext>* output,
+    TensorCPU& buffer_cpu,
+    Tensor<CUDAContext>& buffer);
 }
+
+#endif // CAFFE2_OPERATORS_TRANSPOSE_H_

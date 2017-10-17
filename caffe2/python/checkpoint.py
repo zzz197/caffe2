@@ -26,13 +26,9 @@ from caffe2.python import core, context
 from caffe2.python.net_builder import ops
 from caffe2.python.task import Node, Task, TaskGroup, TaskOutput, WorkspaceType
 
-logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-# The name of the special net that is used to store all the blob names in the
-# workspace.
-__BLOB_NAMES_NET__ = 'get_blob_list'
 
 @context.define_context()
 class Job(object):
