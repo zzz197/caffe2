@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{83321BE5-10B3-44F7-9E43-42180B6FE90B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Caffe2_CPU</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>__CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;DEBUG;CAFFE2_USE_GFLAGS;CAFFE2_USE_GOOGLE_GLOG;GOOGLE_GLOG_DLL_DECL=;CAFFE2_USE_EIGEN_FOR_BLAS;EIGEN_MPL2_ONLY;CAFFE2_UNIQUE_LONG_TYPEMETA;CAFFE2_NO_BUILTIN_CPU_SUPPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../../A0000_common/include;../../;../../../third_party/eigen;../../../../A0000_common/include/opencv330;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>../../../10-common/protobuf/lib/libprotobufd.lib;../x64/debug/Caffe2_PROTO.lib;../../../10-common/leveldb/lib/leveldbd.lib;../../../10-common/lmdb/lib/lmdbd.lib;../../../10-common/openblas/lib/libopenblas.dll.a;../../../10-common/glog/lib/libglog_staticd.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CAFFE2_CPU_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CAFFE2_CPU_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;NDEBUG;CAFFE2_USE_EIGEN_FOR_BLAS;CAFFE2_USE_GFLAGS;GOOGLE_GLOG_DLL_DECL=;EIGEN_MPL2_ONLY;CAFFE2_UNIQUE_LONG_TYPEMETA;CAFFE2_NO_BUILTIN_CPU_SUPPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../../A0000_common/include;../../;../../../third_party/eigen;../../../../A0000_common/include/opencv330</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DisableSpecificWarnings>4267</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>../../../10-common/lib_release;../$(Platform)/$(configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>-WHOLEARCHIVE:Caffe_PROTO.lib;-WHOLEARCHIVE:Caffe2_PROTO.lib;libprotobuf.lib;gflags_static.lib;leveldb.lib;rocksdblib.lib;snappy64.lib;lmdb.lib;opencv_world320.lib;libboost_thread-vc141-mt-s-1_64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\caffe2\core\allocator.cc" />
+    <ClCompile Include="..\..\caffe2\core\blob_serialization.cc" />
+    <ClCompile Include="..\..\caffe2\core\blob_stats.cc" />
+    <ClCompile Include="..\..\caffe2\core\common.cc" />
+    <ClCompile Include="..\..\caffe2\core\db.cc" />
+    <ClCompile Include="..\..\caffe2\core\event.cc" />
+    <ClCompile Include="..\..\caffe2\core\flags.cc" />
+    <ClCompile Include="..\..\caffe2\core\graph.cc" />
+    <ClCompile Include="..\..\caffe2\core\init.cc" />
+    <ClCompile Include="..\..\caffe2\core\init_omp.cc" />
+    <ClCompile Include="..\..\caffe2\core\logging.cc" />
+    <ClCompile Include="..\..\caffe2\core\memonger.cc" />
+    <ClCompile Include="..\..\caffe2\core\net.cc" />
+    <ClCompile Include="..\..\caffe2\core\net_dag.cc" />
+    <ClCompile Include="..\..\caffe2\core\net_simple.cc" />
+    <ClCompile Include="..\..\caffe2\core\net_simple_async.cc" />
+    <ClCompile Include="..\..\caffe2\core\operator.cc" />
+    <ClCompile Include="..\..\caffe2\core\operator_schema.cc" />
+    <ClCompile Include="..\..\caffe2\core\plan_executor.cc" />
+    <ClCompile Include="..\..\caffe2\core\predictor.cc" />
+    <ClCompile Include="..\..\caffe2\core\qtensor.cc" />
+    <ClCompile Include="..\..\caffe2\core\qtensor_serialization.cc" />
+    <ClCompile Include="..\..\caffe2\core\stats.cc" />
+    <ClCompile Include="..\..\caffe2\core\tensor.cc" />
+    <ClCompile Include="..\..\caffe2\core\transform.cc" />
+    <ClCompile Include="..\..\caffe2\core\typeid.cc" />
+    <ClCompile Include="..\..\caffe2\core\types.cc" />
+    <ClCompile Include="..\..\caffe2\core\workspace.cc" />
+    <ClCompile Include="..\..\caffe2\db\create_db_op.cc" />
+    <ClCompile Include="..\..\caffe2\db\leveldb.cc" />
+    <ClCompile Include="..\..\caffe2\db\lmdb.cc" />
+    <ClCompile Include="..\..\caffe2\db\protodb.cc" />
+    <ClCompile Include="..\..\caffe2\operators\abs_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\accumulate_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\accuracy_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\apmeter_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\atomic_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\batch_box_cox_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\batch_gather_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\batch_matmul_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\boolean_mask_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\boolean_unmask_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\cast_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\channel_shuffle_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\clip_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\communicator_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\concat_split_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conditional_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_gradient_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_op_eigen.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_op_shared.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_transpose_gradient_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_transpose_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_transpose_op_mobile.cc" />
+    <ClCompile Include="..\..\caffe2\operators\cosine_embedding_criterion_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\cos_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\counter_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\create_scope_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\cross_entropy_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\dataset_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\deform_conv_gradient_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\deform_conv_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\distance_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\do_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\dropout_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\elementwise_add_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\elementwise_div_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\elementwise_linear_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\elementwise_logical_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\elementwise_mul_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\elementwise_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\elementwise_op_schema.cc" />
+    <ClCompile Include="..\..\caffe2\operators\elementwise_sub_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\elementwise_sum_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\elu_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\expand_squeeze_dims_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\exp_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\extend_tensor_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\feed_blob_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\filler_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\find_duplicate_elements_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\find_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\free_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\fully_connected_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\given_tensor_fill_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\gru_unit_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\half_float_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\h_softmax_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\if_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\im2col_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\index_hash_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\index_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\instance_norm_gradient_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\instance_norm_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\last_n_window_collector.cc" />
+    <ClCompile Include="..\..\caffe2\operators\layer_norm_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\leaky_relu_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\lengths_reducer_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\lengths_reducer_rowwise_8bit_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\lengths_tile_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\lengths_top_k_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\load_save_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\local_response_normalization_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\logit_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\log_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\loss_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\lpnorm_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\lp_pool_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\lstm_unit_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\map_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\margin_ranking_criterion_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\math_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\matmul_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\merge_id_lists_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\multi_class_accuracy_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\negative_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\normalize_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\one_hot_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\order_switch_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\pack_rnn_sequence_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\pack_segments.cc" />
+    <ClCompile Include="..\..\caffe2\operators\pad_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\partition_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\perplexity_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\piecewise_linear_transform_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\pool_gradient_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\pool_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\prelu_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\prepend_dim_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\rank_loss_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\recurrent_network_blob_fetcher_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\recurrent_network_executor.cc" />
+    <ClCompile Include="..\..\caffe2\operators\recurrent_network_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\reduction_front_back_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\reduction_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\relu_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\remove_data_blocks_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\replace_nan_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\reservoir_sampling.cc" />
+    <ClCompile Include="..\..\caffe2\operators\reshape_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\resize_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\reverse_packed_segs_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\rmac_regions_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\roi_pool_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\rowmul_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\scale_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\segment_reduction_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\sequence_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\shape_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\sigmoid_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\sinusoid_position_encoding_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\sin_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\slice_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\softmax_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\softmax_shared.cc" />
+    <ClCompile Include="..\..\caffe2\operators\softmax_with_loss_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\softplus_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\softsign_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\space_batch_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\sparse_to_dense_mask_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\sparse_to_dense_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\spatial_batch_norm_gradient_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\spatial_batch_norm_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\spatial_softmax_with_loss_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\square_root_divide_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\stats_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\stop_gradient.cc" />
+    <ClCompile Include="..\..\caffe2\operators\string_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\summarize_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\tanh_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\tensor_protos_db_input.cc" />
+    <ClCompile Include="..\..\caffe2\operators\text_file_reader.cc" />
+    <ClCompile Include="..\..\caffe2\operators\text_file_reader_utils.cc" />
+    <ClCompile Include="..\..\caffe2\operators\tile_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\top_k.cc" />
+    <ClCompile Include="..\..\caffe2\operators\transpose_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\tt_linear_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\utility_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\while_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\workspace_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\zero_gradient_op.cc" />
+    <ClCompile Include="..\..\caffe2\perfkernels\common_avx.cc" />
+    <ClCompile Include="..\..\caffe2\perfkernels\common_avx2.cc" />
+    <ClCompile Include="..\..\caffe2\perfkernels\embedding_lookup.cc" />
+    <ClCompile Include="..\..\caffe2\perfkernels\typed_axpy.cc" />
+    <ClCompile Include="..\..\caffe2\perfkernels\typed_axpy_avx.cc" />
+    <ClCompile Include="..\..\caffe2\perfkernels\typed_axpy_avx2.cc" />
+    <ClCompile Include="..\..\caffe2\queue\blobs_queue.cc" />
+    <ClCompile Include="..\..\caffe2\queue\blobs_queue_db.cc" />
+    <ClCompile Include="..\..\caffe2\queue\queue_ops.cc" />
+    <ClCompile Include="..\..\caffe2\queue\rebatching_queue.cc" />
+    <ClCompile Include="..\..\caffe2\queue\rebatching_queue_ops.cc" />
+    <ClCompile Include="..\..\caffe2\sgd\adagrad_op.cc" />
+    <ClCompile Include="..\..\caffe2\sgd\adam_op.cc" />
+    <ClCompile Include="..\..\caffe2\sgd\ftrl_op.cc" />
+    <ClCompile Include="..\..\caffe2\sgd\iter_op.cc" />
+    <ClCompile Include="..\..\caffe2\sgd\learning_rate_op.cc" />
+    <ClCompile Include="..\..\caffe2\sgd\momentum_sgd_op.cc" />
+    <ClCompile Include="..\..\caffe2\sgd\rmsprop_op.cc" />
+    <ClCompile Include="..\..\caffe2\sgd\yellowfin_op.cc" />
+    <ClCompile Include="..\..\caffe2\transforms\common_subexpression_elimination.cc" />
+    <ClCompile Include="..\..\caffe2\transforms\conv_to_nnpack_transform.cc" />
+    <ClCompile Include="..\..\caffe2\transforms\pattern_net_transform.cc" />
+    <ClCompile Include="..\..\caffe2\transforms\single_op_transform.cc" />
+    <ClCompile Include="..\..\caffe2\utils\cpuid.cc" />
+    <ClCompile Include="..\..\caffe2\utils\math_cpu.cc" />
+    <ClCompile Include="..\..\caffe2\utils\murmur_hash3.cc" />
+    <ClCompile Include="..\..\caffe2\utils\proto_utils.cc" />
+    <ClCompile Include="..\..\caffe2\utils\signal_handler.cc" />
+    <ClCompile Include="..\..\caffe2\utils\smart_tensor_printer.cc" />
+    <ClCompile Include="..\..\caffe2\utils\string_utils.cc" />
+    <ClCompile Include="..\..\caffe2\utils\threadpool\pthreadpool_impl.cc" />
+    <ClCompile Include="..\..\caffe2\utils\threadpool\ThreadPool.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\caffe2\core\asan.h" />
+    <ClInclude Include="..\..\caffe2\core\blob.h" />
+    <ClInclude Include="..\..\caffe2\core\blob_serialization.h" />
+    <ClInclude Include="..\..\caffe2\core\blob_serializer_base.h" />
+    <ClInclude Include="..\..\caffe2\core\blob_stats.h" />
+    <ClInclude Include="..\..\caffe2\core\common.h" />
+    <ClInclude Include="..\..\caffe2\core\common_omp.h" />
+    <ClInclude Include="..\..\caffe2\core\context.h" />
+    <ClInclude Include="..\..\caffe2\core\db.h" />
+    <ClInclude Include="..\..\caffe2\core\flags.h" />
+    <ClInclude Include="..\..\caffe2\core\init.h" />
+    <ClInclude Include="..\..\caffe2\core\logging.h" />
+    <ClInclude Include="..\..\caffe2\core\logging_is_google_glog.h" />
+    <ClInclude Include="..\..\caffe2\core\logging_is_not_google_glog.h" />
+    <ClInclude Include="..\..\caffe2\core\macros.h" />
+    <ClInclude Include="..\..\caffe2\core\net.h" />
+    <ClInclude Include="..\..\caffe2\core\net_gpu.h" />
+    <ClInclude Include="..\..\caffe2\core\operator.h" />
+    <ClInclude Include="..\..\caffe2\core\operator_gradient.h" />
+    <ClInclude Include="..\..\caffe2\core\operator_schema.h" />
+    <ClInclude Include="..\..\caffe2\core\plan_executor.h" />
+    <ClInclude Include="..\..\caffe2\core\predictor.h" />
+    <ClInclude Include="..\..\caffe2\core\qtensor.h" />
+    <ClInclude Include="..\..\caffe2\core\qtensor_serialization.h" />
+    <ClInclude Include="..\..\caffe2\core\registry.h" />
+    <ClInclude Include="..\..\caffe2\core\scope_guard.h" />
+    <ClInclude Include="..\..\caffe2\core\static_tracepoint.h" />
+    <ClInclude Include="..\..\caffe2\core\static_tracepoint_elfx86.h" />
+    <ClInclude Include="..\..\caffe2\core\stats.h" />
+    <ClInclude Include="..\..\caffe2\core\tensor.h" />
+    <ClInclude Include="..\..\caffe2\core\timer.h" />
+    <ClInclude Include="..\..\caffe2\core\typeid.h" />
+    <ClInclude Include="..\..\caffe2\core\types.h" />
+    <ClInclude Include="..\..\caffe2\core\workspace.h" />
+    <ClInclude Include="..\..\caffe2\operators\clip_op.h" />
+    <ClInclude Include="..\..\caffe2\operators\concat_split_op.h" />
+    <ClInclude Include="..\..\caffe2\operators\conv_op.h" />
+    <ClInclude Include="..\..\caffe2\sgd\adagrad_op.h" />
+    <ClInclude Include="..\..\caffe2\sgd\adam_op.h" />
+    <ClInclude Include="..\..\caffe2\sgd\ftrl_op.h" />
+    <ClInclude Include="..\..\caffe2\sgd\iter_op.h" />
+    <ClInclude Include="..\..\caffe2\sgd\learning_rate_op.h" />
+    <ClInclude Include="..\..\caffe2\sgd\momentum_sgd_op.h" />
+    <ClInclude Include="..\..\caffe2\sgd\rmsprop_op.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

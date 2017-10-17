@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\operators">
+      <UniqueIdentifier>{70d4725e-0e9c-45c5-a101-f7e49405a24c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\sgd">
+      <UniqueIdentifier>{76990a99-355c-4ea1-9f63-ae7b3709eed0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\sgd">
+      <UniqueIdentifier>{976acd78-1957-4551-b17f-8c0ef92f7d29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\operators">
+      <UniqueIdentifier>{d14324c9-c1c9-4cdb-adcd-aeb3238714bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\core">
+      <UniqueIdentifier>{90c2f4b1-9c4e-4730-8ee0-90c87e022643}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\db">
+      <UniqueIdentifier>{cbc1f428-4abb-4920-a176-192d8e64cd2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\utils">
+      <UniqueIdentifier>{4e890c1b-d8d6-4fb9-9fe9-1bec2faf6b5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\core">
+      <UniqueIdentifier>{6909b110-0a7e-457d-ab12-9efad0c9cb6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\queue">
+      <UniqueIdentifier>{3227f547-5f33-4706-8d9c-b8ee8caf03f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\transform">
+      <UniqueIdentifier>{4b21fde5-7c3d-4193-96c5-1be1dda49178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\perf">
+      <UniqueIdentifier>{5d1734a2-52b6-4067-90e2-2a3f2ec0811c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\caffe2\operators\accumulate_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\accuracy_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\atomic_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\batch_matmul_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\boolean_mask_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\boolean_unmask_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\cast_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\clip_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\communicator_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\concat_split_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\conv_gradient_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\conv_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\sgd\adagrad_op.cc">
+      <Filter>源文件\sgd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\sgd\adam_op.cc">
+      <Filter>源文件\sgd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\sgd\ftrl_op.cc">
+      <Filter>源文件\sgd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\sgd\iter_op.cc">
+      <Filter>源文件\sgd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\sgd\learning_rate_op.cc">
+      <Filter>源文件\sgd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\sgd\momentum_sgd_op.cc">
+      <Filter>源文件\sgd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\sgd\rmsprop_op.cc">
+      <Filter>源文件\sgd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\blob_serialization.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\blob_stats.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\db.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\flags.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\init.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\logging.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\net.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\net_dag.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\operator.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\operator_schema.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\predictor.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\qtensor.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\qtensor_serialization.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\stats.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\tensor.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\typeid.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\types.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\workspace.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\db\create_db_op.cc">
+      <Filter>源文件\db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\utils\math_cpu.cc">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\utils\murmur_hash3.cc">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\utils\proto_utils.cc">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\utils\signal_handler.cc">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\utils\string_utils.cc">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\conv_op_eigen.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\conv_op_shared.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\conv_transpose_gradient_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\conv_transpose_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\cosine_embedding_criterion_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\counter_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\cross_entropy_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\dataset_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\distance_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\dropout_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\elementwise_add_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\elementwise_linear_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\elementwise_mul_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\elementwise_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\elementwise_op_schema.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\elu_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\exp_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\extend_tensor_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\feed_blob_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\filler_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\find_duplicate_elements_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\free_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\fully_connected_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\given_tensor_fill_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\h_softmax_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\half_float_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\im2col_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\index_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\instance_norm_gradient_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\instance_norm_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\last_n_window_collector.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\leaky_relu_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\lengths_tile_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\load_save_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\local_response_normalization_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\logit_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\loss_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\lp_pool_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\lstm_unit_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\margin_ranking_criterion_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\math_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\matmul_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\multi_class_accuracy_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\negative_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\normalize_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\one_hot_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\order_switch_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\pack_segments.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\pad_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\partition_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\perplexity_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\piecewise_linear_transform_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\pool_gradient_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\pool_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\prelu_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\rank_loss_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\recurrent_network_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\reduction_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\relu_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\remove_data_blocks_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\replace_nan_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\reshape_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\resize_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\reverse_packed_segs_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\roi_pool_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\rowmul_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\scale_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\segment_reduction_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\sequence_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\sigmoid_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\softmax_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\softmax_shared.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\softmax_with_loss_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\softsign_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\space_batch_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\sparse_to_dense_mask_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\sparse_to_dense_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\spatial_batch_norm_gradient_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\spatial_batch_norm_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\square_root_divide_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\stats_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\stop_gradient.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\string_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\summarize_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\tanh_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\tensor_protos_db_input.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\text_file_reader.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\text_file_reader_utils.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\tile_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\top_k.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\transpose_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\tt_linear_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\utility_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\workspace_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\init_omp.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\db\leveldb.cc">
+      <Filter>源文件\db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\db\protodb.cc">
+      <Filter>源文件\db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\conv_transpose_op_mobile.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\utils\threadpool\ThreadPool.cc">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\utils\threadpool\pthreadpool_impl.cc">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\db\lmdb.cc">
+      <Filter>源文件\db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\memonger.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\plan_executor.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\utils\smart_tensor_printer.cc">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\abs_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\apmeter_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\batch_box_cox_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\cos_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\elementwise_div_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\elementwise_logical_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\elementwise_sub_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\elementwise_sum_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\find_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\gru_unit_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\index_hash_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\log_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\map_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\pack_rnn_sequence_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\recurrent_network_blob_fetcher_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\sin_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\softplus_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\spatial_softmax_with_loss_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\zero_gradient_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\utils\cpuid.cc">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\allocator.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\common.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\event.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\graph.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\net_simple.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\net_simple_async.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\transform.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\sgd\yellowfin_op.cc">
+      <Filter>源文件\sgd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\queue\blobs_queue.cc">
+      <Filter>源文件\queue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\queue\blobs_queue_db.cc">
+      <Filter>源文件\queue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\queue\queue_ops.cc">
+      <Filter>源文件\queue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\queue\rebatching_queue.cc">
+      <Filter>源文件\queue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\queue\rebatching_queue_ops.cc">
+      <Filter>源文件\queue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\transforms\common_subexpression_elimination.cc">
+      <Filter>源文件\transform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\transforms\conv_to_nnpack_transform.cc">
+      <Filter>源文件\transform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\transforms\pattern_net_transform.cc">
+      <Filter>源文件\transform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\transforms\single_op_transform.cc">
+      <Filter>源文件\transform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\batch_gather_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\channel_shuffle_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\conditional_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\create_scope_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\deform_conv_gradient_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\deform_conv_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\do_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\expand_squeeze_dims_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\if_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\layer_norm_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\lengths_reducer_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\lengths_reducer_rowwise_8bit_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\lengths_top_k_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\lpnorm_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\merge_id_lists_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\prepend_dim_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\recurrent_network_executor.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\reduction_front_back_ops.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\reservoir_sampling.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\rmac_regions_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\shape_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\sinusoid_position_encoding_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\slice_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\while_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\perfkernels\common_avx.cc">
+      <Filter>源文件\perf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\perfkernels\common_avx2.cc">
+      <Filter>源文件\perf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\perfkernels\embedding_lookup.cc">
+      <Filter>源文件\perf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\perfkernels\typed_axpy.cc">
+      <Filter>源文件\perf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\perfkernels\typed_axpy_avx.cc">
+      <Filter>源文件\perf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\perfkernels\typed_axpy_avx2.cc">
+      <Filter>源文件\perf</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\caffe2\sgd\adagrad_op.h">
+      <Filter>头文件\sgd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\sgd\adam_op.h">
+      <Filter>头文件\sgd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\sgd\ftrl_op.h">
+      <Filter>头文件\sgd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\sgd\iter_op.h">
+      <Filter>头文件\sgd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\sgd\learning_rate_op.h">
+      <Filter>头文件\sgd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\sgd\momentum_sgd_op.h">
+      <Filter>头文件\sgd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\sgd\rmsprop_op.h">
+      <Filter>头文件\sgd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\operators\clip_op.h">
+      <Filter>头文件\operators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\operators\concat_split_op.h">
+      <Filter>头文件\operators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\operators\conv_op.h">
+      <Filter>头文件\operators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\asan.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\blob.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\blob_serialization.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\blob_serializer_base.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\blob_stats.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\common.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\common_omp.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\context.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\db.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\flags.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\init.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\logging.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\logging_is_google_glog.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\logging_is_not_google_glog.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\macros.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\net.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\net_gpu.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\operator.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\operator_gradient.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\operator_schema.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\plan_executor.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\predictor.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\qtensor.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\qtensor_serialization.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\registry.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\scope_guard.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\static_tracepoint.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\static_tracepoint_elfx86.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\stats.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\tensor.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\timer.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\typeid.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\types.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\caffe2\core\workspace.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

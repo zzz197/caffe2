@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\caffe2\core\blob_serialization_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\core\common_cudnn.cc" />
+    <ClCompile Include="..\..\caffe2\core\common_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\core\event_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\core\net_async_dag_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\core\net_singlethread_async_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\cuda_rtc\elemenntwise_rtc_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\cuda_rtc\pool_op_rtc_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\db\create_db_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\image\image_input_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\communicator_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\concat_split_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_op_cache_cudnn.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_op_cudnn.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_op_shared_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_transpose_op_cudnn.cc" />
+    <ClCompile Include="..\..\caffe2\operators\conv_transpose_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\counter_ops_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\dropout_op_cudnn.cc" />
+    <ClCompile Include="..\..\caffe2\operators\expand_squeeze_dims_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\free_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\fully_connected_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\im2col_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\load_save_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\local_response_normalization_op_cudnn.cc" />
+    <ClCompile Include="..\..\caffe2\operators\matmul_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\pack_segments_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\prepend_dim_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\recurrent_network_blob_fetcher_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\recurrent_network_executor_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\recurrent_op_cudnn.cc" />
+    <ClCompile Include="..\..\caffe2\operators\relu_op_cudnn.cc" />
+    <ClCompile Include="..\..\caffe2\operators\reshape_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\scale_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\shape_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\softmax_op_cudnn.cc" />
+    <ClCompile Include="..\..\caffe2\operators\spatial_batch_norm_op_cudnn.cc" />
+    <ClCompile Include="..\..\caffe2\operators\stop_gradient_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\tensor_protos_db_input_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\transpose_op_cudnn.cc" />
+    <ClCompile Include="..\..\caffe2\operators\utility_ops_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\operators\zero_gradient_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\queue\queue_ops_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\sgd\iter_op_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\sgd\learning_rate_op_gpu.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\..\caffe2\core\context_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\image\transform_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\abs_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\accumulate_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\accuracy_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\batch_gather_ops.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\batch_matmul_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\boolean_mask_ops.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\boolean_unmask_ops.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\cast_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\channel_shuffle_op_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\clip_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\cosine_embedding_criterion_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\cross_entropy_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\deform_conv_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\distance_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\dropout_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\elementwise_linear_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\elementwise_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\elu_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\exp_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\filler_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\find_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\given_tensor_fill_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\gru_unit_op_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\half_float_ops.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\instance_norm_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\layer_norm_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\leaky_relu_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\local_response_normalization_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\log_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\loss_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\lp_pool_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\lstm_unit_op_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\margin_ranking_criterion_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\math_ops.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\max_pool_with_index.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\mem_query_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\multi_class_accuracy_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\negative_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\normalize_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\one_hot_ops.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\order_switch_ops.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\pad_op_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\perplexity_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\piecewise_linear_transform_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\pool_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\pool_op_cudnn.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\prelu_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\recurrent_network_op_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\reduction_front_back_ops.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\reduction_ops.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\relu_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\relu_op_fp16.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\resize_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\reverse_packed_segs_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\rmac_regions_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\roi_pool_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\segment_reduction_op_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\sigmoid_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\sin_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\slice_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\softmax_ops.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\softplus_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\softsign_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\space_batch_op_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\sparse_to_dense_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\summarize_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\tanh_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\tile_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\transpose_op.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\utility_ops.cu" />
+    <CudaCompile Include="..\..\caffe2\sgd\adagrad_op_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\sgd\adam_op_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\sgd\momentum_sgd_op_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\sgd\rmsprop_op_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\sgd\yellowfin_op_gpu.cu" />
+    <CudaCompile Include="..\..\caffe2\utils\math_gpu.cu" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C76A2C14-4007-41B8-B146-10B7F35FECE3}</ProjectGuid>
+    <RootNamespace>Caffe2_GPU</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 9.0.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;EIGEN_HAS_CUDA_FP16;CAFFE2_UNIQUE_LONG_TYPEMETA;CAFFE2_NO_BUILTIN_CPU_SUPPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../;../../../10-common/include;../../third_party/eigen;$(CudaToolkitIncludeDir)/thrust/system/cuda/detail/cub;$(CudaToolkitIncludeDir)/thrust/system/cuda/detail;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <AdditionalOptions>-Xcompiler "/wd 4819" --std=c++14 %(AdditionalOptions)</AdditionalOptions>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;WIN64;NDEBUG;_CONSOLE;CAFFE2_USE_EIGEN_FOR_BLAS;CAFFE2_USE_GFLAGS;GLOG_NO_ABBREVIATED_SEVERITIES;GOOGLE_GLOG_DLL_DECL=;EIGEN_MPL2_ONLY;CAFFE2_UNIQUE_LONG_TYPEMETA;CAFFE2_NO_BUILTIN_CPU_SUPPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../../A0000_common/include;../../;../../../third_party/eigen;../../../../A0000_common/include/opencv330;../../../third_party/cub;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_60,sm_60</CodeGeneration>
+      <AdditionalOptions>-Xcompiler "/wd 4819" %(AdditionalOptions)</AdditionalOptions>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 9.0.targets" />
+  </ImportGroup>
+</Project>
