@@ -98,7 +98,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalDependencies>D:\Program Files\anaconda2\libs\python27.lib;libprotobufd.lib;-WHOLEARCHIVE:Caffe2_PROTO.lib;-WHOLEARCHIVE:Caffe_PROTO.lib;-WHOLEARCHIVE:Caffe2_CPU.lib;lmdbd.lib;gflags_static.lib;glog.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>../../../../A0000_common/lib/debug/win64;../$(Platform)/$(configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../../../A0000_common/lib/debug/win64;../$(Platform)/$(configuration);../../../../A0000_common/lib/debug/win64/boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -145,8 +145,8 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>../../../../A0000_common/lib/release/win64;../$(Platform)/$(configuration);../../../../B0001ThirdParty/boost_1_65_1/lib64-msvc-14.1</AdditionalLibraryDirectories>
-      <AdditionalDependencies>-WHOLEARCHIVE:Caffe2_CPU.lib;-WHOLEARCHIVE:Caffe_PROTO.lib;-WHOLEARCHIVE:Caffe2_PROTO.lib;D:\Program Files\Anaconda2\libs\python27.lib;libprotobuf.lib;gflags_static.lib;glog.lib;leveldb.lib;snappy64.lib;lmdb.lib;opencv330/opencv_world330.lib;libboost_thread-vc141-mt-s-1_65_1.lib;Shlwapi.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../../A0000_common/lib/release/win64;../$(Platform)/$(configuration);../../../../A0000_common/lib/release/win64/boost</AdditionalLibraryDirectories>
+      <AdditionalDependencies>-WHOLEARCHIVE:Caffe2_CPU.lib;-WHOLEARCHIVE:Caffe_PROTO.lib;-WHOLEARCHIVE:Caffe2_PROTO.lib;D:\Program Files\Anaconda2\libs\python27.lib;libprotobuf.lib;gflags_static.lib;glog.lib;leveldb.lib;snappy64.lib;lmdb.lib;opencv330/opencv_world330.lib;Shlwapi.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)caffe2\python\$(TargetFileName)</Command>

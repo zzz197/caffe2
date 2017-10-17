@@ -57,11 +57,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>../../../../A0000_common/include;../../;../../../third_party/eigen;../../../third_party/pybind11/include;D:\Program Files\Anaconda2\include;D:\Program Files\Anaconda2\lib\site-packages\numpy\core\include;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>D:\Program Files\anaconda2\libs\python27.lib;libprotobufd.lib;-WHOLEARCHIVE:Caffe2_PROTO.lib;-WHOLEARCHIVE:Caffe_PROTO.lib;-WHOLEARCHIVE:Caffe2_CPU.lib;lmdbd.lib;gflags_static.lib;glog.lib;cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../../A0000_common/lib/debug/win64;../$(Platform)/$(configuration);../../../../A0000_common/lib/debug/win64/boost;%(AdditionalLibraryDirectories);$(CudaToolkitLibDir)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
@@ -86,8 +88,8 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>-WHOLEARCHIVE:Caffe2_CPU.lib;-WHOLEARCHIVE:Caffe2_GPU.lib;-WHOLEARCHIVE:Caffe_PROTO.lib;-WHOLEARCHIVE:Caffe2_PROTO.lib;D:\Program Files\Anaconda2\libs\python27.lib;libprotobuf.lib;gflags_static.lib;glog.lib;leveldb.lib;snappy64.lib;lmdb.lib;opencv330/opencv_world330.lib;libboost_thread-vc141-mt-s-1_65_1.lib;Shlwapi.lib;ntdll.lib;cudart.lib;curand.lib;cublas.lib;cudnn.lib;nvrtc.lib;cuda.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>../../../../A0000_common/lib/release/win64;../$(Platform)/$(configuration);../../../../B0001ThirdParty/boost_1_65_1/lib64-msvc-14.1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>-WHOLEARCHIVE:Caffe2_CPU.lib;-WHOLEARCHIVE:Caffe2_GPU.lib;-WHOLEARCHIVE:Caffe_PROTO.lib;-WHOLEARCHIVE:Caffe2_PROTO.lib;D:\Program Files\Anaconda2\libs\python27.lib;libprotobuf.lib;gflags_static.lib;glog.lib;leveldb.lib;snappy64.lib;lmdb.lib;opencv330/opencv_world330.lib;Shlwapi.lib;ntdll.lib;cudart.lib;curand.lib;cublas.lib;cudnn.lib;nvrtc.lib;cuda.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../../A0000_common/lib/release/win64;../$(Platform)/$(configuration);../../../../A0000_common/lib/release/win64/boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
