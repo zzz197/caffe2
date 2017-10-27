@@ -88,7 +88,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>__CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;DEBUG;CAFFE2_USE_GFLAGS;CAFFE2_USE_GOOGLE_GLOG;GOOGLE_GLOG_DLL_DECL=;CAFFE2_USE_EIGEN_FOR_BLAS;EIGEN_MPL2_ONLY;CAFFE2_UNIQUE_LONG_TYPEMETA;CAFFE2_NO_BUILTIN_CPU_SUPPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>__CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;DEBUG;CAFFE2_USE_GFLAGS;GOOGLE_GLOG_DLL_DECL=;CAFFE2_USE_EIGEN_FOR_BLAS;EIGEN_MPL2_ONLY;CAFFE2_UNIQUE_LONG_TYPEMETA;CAFFE2_NO_BUILTIN_CPU_SUPPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../../../A0000_common/include;../../;../../../third_party/eigen;../../../../A0000_common/include/opencv330;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -181,6 +181,7 @@
     <ClCompile Include="..\..\caffe2\db\leveldb.cc" />
     <ClCompile Include="..\..\caffe2\db\lmdb.cc" />
     <ClCompile Include="..\..\caffe2\db\protodb.cc" />
+    <ClCompile Include="..\..\caffe2\observers\time_observer.cc" />
     <ClCompile Include="..\..\caffe2\operators\abs_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\accumulate_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\accuracy_op.cc" />

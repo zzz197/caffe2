@@ -97,7 +97,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>D:\Program Files\anaconda2\libs\python27.lib;libprotobufd.lib;-WHOLEARCHIVE:Caffe2_PROTO.lib;-WHOLEARCHIVE:Caffe_PROTO.lib;-WHOLEARCHIVE:Caffe2_CPU.lib;lmdbd.lib;gflags_static.lib;glog.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>D:\Program Files\anaconda2\libs\python27.lib;libprotobufd.lib;-WHOLEARCHIVE:Caffe2_PROTO.lib;-WHOLEARCHIVE:Caffe_PROTO.lib;-WHOLEARCHIVE:Caffe2_CPU.lib;lmdbd.lib;leveldbd.lib;gflags_static.lib;glog.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>../../../../A0000_common/lib/debug/win64;../$(Platform)/$(configuration);../../../../A0000_common/lib/debug/win64/boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>

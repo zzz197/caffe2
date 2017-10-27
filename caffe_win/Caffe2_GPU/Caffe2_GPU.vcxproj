@@ -221,7 +221,7 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;EIGEN_HAS_CUDA_FP16;CAFFE2_UNIQUE_LONG_TYPEMETA;CAFFE2_NO_BUILTIN_CPU_SUPPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;CAFFE2_USE_EIGEN_FOR_BLAS;CAFFE2_USE_GFLAGS;GLOG_NO_ABBREVIATED_SEVERITIES;GOOGLE_GLOG_DLL_DECL=;EIGEN_MPL2_ONLY;CAFFE2_UNIQUE_LONG_TYPEMETA;CAFFE2_NO_BUILTIN_CPU_SUPPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../;../../../10-common/include;../../third_party/eigen;$(CudaToolkitIncludeDir)/thrust/system/cuda/detail/cub;$(CudaToolkitIncludeDir)/thrust/system/cuda/detail;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>

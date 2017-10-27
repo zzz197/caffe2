@@ -46,6 +46,9 @@
     <Filter Include="源文件\perf">
       <UniqueIdentifier>{5d1734a2-52b6-4067-90e2-2a3f2ec0811c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\observers">
+      <UniqueIdentifier>{fbc96562-2baf-42dd-a445-233f62b5c8f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\caffe2\operators\accumulate_op.cc">
@@ -689,6 +692,9 @@
     </ClCompile>
     <ClCompile Include="..\..\caffe2\perfkernels\typed_axpy_avx2.cc">
       <Filter>源文件\perf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\observers\time_observer.cc">
+      <Filter>源文件\observers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
