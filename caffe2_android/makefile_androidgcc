@@ -1,0 +1,173 @@
+#目标名
+TARGET_SO = libCaffe2_CPU.so
+#TARGET_A = gflags.a
+#TARGET_EXECT = printtest
+
+#源文件夹,相对makefile的路径
+SRC_DIR_CPP += ../caffe2/proto
+SRC_DIR_CPP += ../caffe/proto
+SRC_DIR_CPP += ../caffe2/core
+SRC_DIR_CPP += ../caffe2/queue
+SRC_DIR_CPP += ../caffe2/sgd
+SRC_DIR_CPP += ../caffe2/utils
+SRC_DIR_CPP += ../caffe2/utils/threadpool
+SRC_DIR_CPP += ../caffe2/operators
+
+SOURCES_CPP_ALL = $(foreach dir,$(SRC_DIR_CPP), $(wildcard $(dir)/*.cc))
+SOURCES_CPP_TEST = $(foreach dir,$(SRC_DIR_CPP), $(wildcard $(dir)/*_test.cc))
+SOURCES_CPP_GPU = $(foreach dir,$(SRC_DIR_CPP), $(wildcard $(dir)/*_gpu.cc))
+SOURCES_CPP_CUDNN = $(foreach dir,$(SRC_DIR_CPP), $(wildcard $(dir)/*_cudnn.cc))
+
+SOURCES_FILTER_OUT = $(SOURCES_CPP_TEST) $(SOURCES_CPP_GPU) $(SOURCES_CPP_CUDNN)
+
+SOURCES_CPP_CPU = $(filter-out $(SOURCES_FILTER_OUT), $(SOURCES_CPP_ALL))
+
+#vfp选项的cpp
+SOURCES_PUBLIC_CPP_VFP = $(SOURCES_CPP_CPU)
+
+
+#包含文件夹
+INC_PATH += ../
+INC_PATH += ../../10-common/include
+INC_PATH += ../third_party/eigen
+#INC_PATH += ./include
+
+LINK_LIB += stdc++ log
+
+COMPILE_INCLUDE_FLAGS = $(foreach dir,$(INC_PATH),-I$(dir))
+LINK_LIB_FLAGS = $(foreach lib,$(LINK_LIB),-l$(lib))
+LINK_PATH_FLAGS = $(foreach dir,$(LINK_PATH),-L$(dir))
+
+#c编译参数
+CFLAGS += -O2
+CFLAGS += -DARCH_ARM_X86_LINUX
+CFLAGS += -fPIC
+CFLAGS += $(COMPILE_INCLUDE_FLAGS)
+
+#cpp编译参数
+CPPFLAGS += -std=c++11
+CPPFLAGS += -O2
+CPPFLAGS += -D__ANDROID__ -DARCH_ARM_X86_LINUX
+CPPFLAGS += -fPIC
+CPPFLAGS += -Wall -Wpointer-arith -Wno-unused-variable
+CPPFLAGS += -Wno-shadow -Wno-sign-compare
+CPPFLAGS += $(COMPILE_INCLUDE_FLAGS)
+
+#ASM编译参数
+ASMFLAGS = -g
+
+#链接参数
+LDD_LDFLAGS = $(LINK_PATH_FLAGS)
+SPECIAL_LDFLAGS += -pthread $(LINK_LIB_FLAGS)
+
+
+#目标平台参数
+ABI += -march=armv7-a -mfloat-abi=softfp
+
+#编译工具
+USE_GCC = 0
+
+AR  = arm-linux-androideabi-ar
+AS = arm-linux-androideabi-as
+
+ifeq ($(USE_GCC), 1)
+CC = arm-linux-androideabi-gcc
+CPP = arm-linux-androideabi-g++
+else
+#TARGET_TRIPLE = --target=armv7a-none-linux-android
+CC = arm-linux-androideabi-clang
+CPP = arm-linux-androideabi-clang++
+endif
+
+
+#对象名
+OBJS := $(SOURCES_PUBLIC:.c=.o)
+OBJSCPP_VFP := $(SOURCES_PUBLIC_CPP_VFP:.cc=.o)
+OBJSCPP_NEON := $(SOURCES_PUBLIC_CPP_NEON:.cc=.o)
+OBJS_ASM := $(SOURCES_PUBLIC_ASM:.s=.o)
+
+.PHONY : all
+ifdef TARGET_SO
+all: $(TARGET_SO)
+	$(call DONE,$(TARGET_SO))
+endif
+	
+ifdef TARGET_A
+all: $(TARGET_A)
+	$(call DONE,$(TARGET_A))
+endif
+
+ifdef TARGET_EXECT
+all: $(TARGET_EXECT)
+	$(call DONE,$(TARGET_EXECT))
+endif
+
+$(OBJS): %.o: %.c
+	$(CC) -c $(CFLAGS) $(ABI) -mfpu=vfpv4 $< -o $@
+
+$(OBJSCPP_VFP): %.o: %.cc
+	$(CPP) -c $(CPPFLAGS) $(ABI) -mfpu=vfpv4 $< -o $@
+	
+$(OBJSCPP_NEON): %.o: %.cc
+	$(CPP) -c $(CPPFLAGS) $(ABI) -mfpu=neon $< -o $@
+
+$(OBJS_ASM): %.o: %.s
+	$(AS) -c $(ASMFLAGS) $(ABI) -mfpu=neon $< -o $@
+	
+$(TARGET_SO): $(OBJS) $(OBJSCPP_VFP) $(OBJSCPP_NEON) $(OBJS_ASM)
+	$(CPP) $(OBJS) $(OBJSCPP_VFP) $(OBJSCPP_NEON) $(OBJS_ASM) $(LDD_LDFLAGS) $(SPECIAL_LDFLAGS) -shared -o $(TARGET_SO)
+
+$(TARGET_A): $(OBJS) $(OBJSCPP_VFP) $(OBJSCPP_NEON) $(OBJS_ASM)
+	$(AR) crus $(TARGET_A) $(OBJS) $(OBJSCPP_VFP) $(OBJSCPP_NEON) $(OBJS_ASM) 
+
+$(TARGET_EXECT): $(OBJS) $(OBJSCPP_VFP) $(OBJSCPP_NEON) $(OBJS_ASM)
+	$(CPP) $(OBJS) $(OBJSCPP_VFP) $(OBJSCPP_NEON) $(OBJS_ASM) $(LDD_LDFLAGS) $(SPECIAL_LDFLAGS) -pie -o $(TARGET_EXECT)
+	
+.PHONY : clean
+clean :
+	$(call RM,$(OBJS))
+	$(call RM,$(OBJSCPP_VFP))
+	$(call RM,$(OBJSCPP_NEON))
+	$(call RM,$(OBJS_ASM))
+	
+###################################################################################################
+# Select build rules based on Windows or Linux
+ifdef WINDIR
+#  Building on Windows
+RPATH=$$ORIGIN
+WINPATH=$(subst /,\,$(1))
+DONE=@if exist $(call WINPATH,$(1)) echo Build completed.
+define REAL_RM
+if exist $(call WINPATH,$(1)) del /q $(call WINPATH,$(1))
+
+endef
+RM=$(foreach file,$(1),$(call REAL_RM,$(file)))
+SHELL=$(windir)\system32\cmd.exe
+MD=if not exist $(1) mkdir $(1)
+CP = copy $(call WINPATH,$(1)) $(call WINPATH,$(2))
+else
+ifdef windir
+#  Building on Windows
+RPATH=$$ORIGIN
+WINPATH=$(subst /,\,$(1))
+DONE=@if exist $(call WINPATH,$(1)) echo Build completed.
+define REAL_RM
+if exist $(call WINPATH,$(1)) del /q $(call WINPATH,$(1))
+
+endef
+RM=$(foreach file,$(1),$(call REAL_RM,$(file)))
+SHELL=$(windir)\system32\cmd.exe
+MD=if not exist $(1) mkdir $(1)
+CP = copy $(call WINPATH,$(1)) $(call WINPATH,$(2))
+
+else
+#  Building on Linux
+RPATH='$$ORIGIN'
+DONE=@if [ -f $(1) ]; then echo Build completed.; fi
+RM=rm -f $(1)
+MD=@if [ ! -d $(1) ]; then mkdir $(1); fi
+CP=cp -vf $(1) $(2)
+endif
+endif
+
+##########################################################################
