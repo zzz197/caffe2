@@ -60,8 +60,6 @@ OperatorBase::OperatorBase(const OperatorDef& operator_def, Workspace* ws)
   }
 }
 
-TensorShape GetTensorShapeOfBlob(const Blob* b);
-
 vector<TensorShape> OperatorBase::InputTensorShapes() {
   vector<TensorShape> tps;
   for (const auto& blob : inputs_) {
@@ -468,13 +466,20 @@ static TensorShapes InferBlobShapesAndTypes(
       }
 
       if (out.size() != op.output_size()) {
-        CAFFE_THROW(
-            "Invalid shape inference for operator ",
-            op.type(),
-            " Expected ",
-            op.output_size(),
-            " outputs, but got ",
-            out.size());
+        if (op.type() == "Slice") {
+          CAFFE_ENFORCE(
+              out.size() == 0,
+              "For Slice operator, either shape of all output blobs are "
+              "inferred or shape of none can be inferred.");
+        } else {
+          CAFFE_THROW(
+              "Invalid shape inference for operator ",
+              op.type(),
+              " Expected ",
+              op.output_size(),
+              " outputs, but got ",
+              out.size());
+        }
       } else {
         for (int i = 0; i < out.size(); i++) {
           blob_desc[op.output(i)] = out[i];

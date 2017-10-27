@@ -80,45 +80,61 @@ if(USE_NNPACK)
   endif()
 endif()
 
-# ---[ Google-glog
-if(USE_GLOG)
-  include("cmake/External/glog.cmake")
-  if(GLOG_FOUND)
-    set(CAFFE2_USE_GOOGLE_GLOG 1)
-    caffe2_include_directories(${GLOG_INCLUDE_DIRS})
-    list(APPEND Caffe2_DEPENDENCY_LIBS ${GLOG_LIBRARIES})
-  else()
-    message(WARNING "Not compiling with glog. Suppress this warning with -DUSE_GLOG=OFF")
-    set(USE_GLOG OFF)
-  endif()
-endif()
-
-# ---[ Google-gflags
+# ---[ gflags
 if(USE_GFLAGS)
-  include("cmake/External/gflags.cmake")
+  find_package(GFlags)
   if(GFLAGS_FOUND)
     set(CAFFE2_USE_GFLAGS 1)
     caffe2_include_directories(${GFLAGS_INCLUDE_DIRS})
     list(APPEND Caffe2_DEPENDENCY_LIBS ${GFLAGS_LIBRARIES})
   else()
-    message(WARNING "Not compiling with gflags. Suppress this warning with -DUSE_GFLAGS=OFF")
+    message(WARNING
+        "gflags is not found. Caffe2 will build without gflags support but it "
+        "is strongly recommended that you install gflags. Suppress this "
+        "warning with -DUSE_GFLAGS=OFF")
     set(USE_GFLAGS OFF)
+  endif()
+endif()
+
+# ---[ Google-glog
+if(USE_GLOG)
+  find_package(Glog)
+  if(GLOG_FOUND)
+    set(CAFFE2_USE_GOOGLE_GLOG 1)
+    caffe2_include_directories(${GLOG_INCLUDE_DIRS})
+    list(APPEND Caffe2_DEPENDENCY_LIBS ${GLOG_LIBRARIES})
+  else()
+    message(WARNING
+        "glog is not found. Caffe2 will build without glog support but it is "
+        "strongly recommended that you install glog. Suppress this warning "
+        "with -DUSE_GLOG=OFF")
+    set(USE_GLOG OFF)
   endif()
 endif()
 
 # ---[ Googletest and benchmark
 if(BUILD_TEST)
+  set(TEMP_BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS})
+  # We will build gtest as static libs and embed it directly into the binary.
+  set(BUILD_SHARED_LIBS OFF)
+  # For gtest, we will simply embed it into our test binaries, so we won't
+  # need to install it.
+  set(BUILD_GTEST ON)
+  set(INSTALL_GTEST OFF)
+  # We currently don't need gmock right now.
+  set(BUILD_GMOCK OFF)
   add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/googletest)
   caffe2_include_directories(${PROJECT_SOURCE_DIR}/third_party/googletest/googletest/include)
 
-  find_package(Benchmark)
-  if(Benchmark_FOUND)
-    list(APPEND Caffe2_DEPENDENCY_LIBS ${Benchmark_LIBRARIES})
-    caffe2_include_directories(${Benchmark_INCLUDE_DIRS})
-  else()
-    add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/benchmark)
-    caffe2_include_directories(${PROJECT_SOURCE_DIR}/third_party/benchmark/include)
-  endif()
+  # We will not need to test benchmark lib itself.
+  set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Disable benchmark testing as we don't need it.")
+  # We will not need to install benchmark since we link it statically. 
+  set(BENCHMARK_ENABLE_INSTALL OFF CACHE BOOL "Disable benchmark install to avoid overwriting vendor install.")
+  add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/benchmark)
+  caffe2_include_directories(${PROJECT_SOURCE_DIR}/third_party/benchmark/include)
+
+  # Recover the build shared libs option.
+  set(BUILD_SHARED_LIBS ${TEMP_BUILD_SHARED_LIBS})
 endif()
 
 # ---[ LMDB
@@ -218,11 +234,14 @@ if(USE_FFMPEG)
 endif()
 
 # ---[ EIGEN
+# Due to license considerations, we will only use the MPL2 parts of Eigen.
 set(EIGEN_MPL2_ONLY 1)
-find_package(Eigen3 QUIET)
+find_package(Eigen3)
 if(EIGEN3_FOUND)
+  message(STATUS "Found system Eigen at " ${EIGEN3_INCLUDE_DIRS})
   caffe2_include_directories(${EIGEN3_INCLUDE_DIRS})
 else()
+  message(STATUS "Did not find system Eigen. Using third party subdirectory.")
   caffe2_include_directories(${PROJECT_SOURCE_DIR}/third_party/eigen)
 endif()
 
