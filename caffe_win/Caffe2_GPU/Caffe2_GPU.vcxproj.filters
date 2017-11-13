@@ -165,6 +165,9 @@
     <ClCompile Include="..\..\caffe2\operators\zero_gradient_op_gpu.cc">
       <Filter>operators</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\net_async_gpu_thread_pool_gpu.cc">
+      <Filter>core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="..\..\caffe2\core\context_gpu.cu">
@@ -399,6 +402,9 @@
       <Filter>operators</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\caffe2\operators\elementwise_op.cu">
+      <Filter>operators</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\caffe2\operators\weighted_sample_op.cu">
       <Filter>operators</Filter>
     </CudaCompile>
   </ItemGroup>

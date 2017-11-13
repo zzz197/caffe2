@@ -696,6 +696,21 @@
     <ClCompile Include="..\..\caffe2\observers\time_observer.cc">
       <Filter>源文件\observers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\net_async_polling.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\core\net_dag_utils.cc">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\weighted_sample_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\flexible_top_k.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\caffe2\operators\mod_op.cc">
+      <Filter>源文件\operators</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\caffe2\sgd\adagrad_op.h">

@@ -162,7 +162,9 @@
     <ClCompile Include="..\..\caffe2\core\logging.cc" />
     <ClCompile Include="..\..\caffe2\core\memonger.cc" />
     <ClCompile Include="..\..\caffe2\core\net.cc" />
+    <ClCompile Include="..\..\caffe2\core\net_async_polling.cc" />
     <ClCompile Include="..\..\caffe2\core\net_dag.cc" />
+    <ClCompile Include="..\..\caffe2\core\net_dag_utils.cc" />
     <ClCompile Include="..\..\caffe2\core\net_simple.cc" />
     <ClCompile Include="..\..\caffe2\core\net_simple_async.cc" />
     <ClCompile Include="..\..\caffe2\core\operator.cc" />
@@ -233,6 +235,7 @@
     <ClCompile Include="..\..\caffe2\operators\filler_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\find_duplicate_elements_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\find_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\flexible_top_k.cc" />
     <ClCompile Include="..\..\caffe2\operators\free_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\fully_connected_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\given_tensor_fill_op.cc" />
@@ -265,6 +268,7 @@
     <ClCompile Include="..\..\caffe2\operators\math_ops.cc" />
     <ClCompile Include="..\..\caffe2\operators\matmul_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\merge_id_lists_op.cc" />
+    <ClCompile Include="..\..\caffe2\operators\mod_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\multi_class_accuracy_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\negative_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\normalize_op.cc" />
@@ -329,6 +333,7 @@
     <ClCompile Include="..\..\caffe2\operators\transpose_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\tt_linear_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\utility_ops.cc" />
+    <ClCompile Include="..\..\caffe2\operators\weighted_sample_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\while_op.cc" />
     <ClCompile Include="..\..\caffe2\operators\workspace_ops.cc" />
     <ClCompile Include="..\..\caffe2\operators\zero_gradient_op.cc" />

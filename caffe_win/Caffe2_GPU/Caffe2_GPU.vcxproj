@@ -24,6 +24,7 @@
     <ClCompile Include="..\..\caffe2\core\common_gpu.cc" />
     <ClCompile Include="..\..\caffe2\core\event_gpu.cc" />
     <ClCompile Include="..\..\caffe2\core\net_async_dag_gpu.cc" />
+    <ClCompile Include="..\..\caffe2\core\net_async_gpu_thread_pool_gpu.cc" />
     <ClCompile Include="..\..\caffe2\core\net_singlethread_async_gpu.cc" />
     <ClCompile Include="..\..\caffe2\cuda_rtc\elemenntwise_rtc_gpu.cc" />
     <ClCompile Include="..\..\caffe2\cuda_rtc\pool_op_rtc_gpu.cc" />
@@ -139,6 +140,7 @@
     <CudaCompile Include="..\..\caffe2\operators\tile_op.cu" />
     <CudaCompile Include="..\..\caffe2\operators\transpose_op.cu" />
     <CudaCompile Include="..\..\caffe2\operators\utility_ops.cu" />
+    <CudaCompile Include="..\..\caffe2\operators\weighted_sample_op.cu" />
     <CudaCompile Include="..\..\caffe2\sgd\adagrad_op_gpu.cu" />
     <CudaCompile Include="..\..\caffe2\sgd\adam_op_gpu.cu" />
     <CudaCompile Include="..\..\caffe2\sgd\momentum_sgd_op_gpu.cu" />
